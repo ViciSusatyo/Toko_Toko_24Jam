@@ -6,7 +6,6 @@
     <meta name="description" content="CoreUI - Open Source Bootstrap Admin Template">
     <title>@yield('title', 'Dashboard') | CoreUI</title>
 
-    <!-- Vendors styles-->
     <link rel="stylesheet" href="{{ asset('coreui/vendors/simplebar/css/simplebar.css') }}">
     <link rel="stylesheet" href="{{ asset('coreui/css/vendors/simplebar.css') }}">
     <!-- Main styles for this application-->

@@ -6,7 +6,6 @@
     <meta name="description" content="CoreUI authentication page">
     <title>@yield('title', 'Authentication') | CoreUI</title>
 
-    <!-- Vendors styles-->
     <link rel="stylesheet" href="{{ asset('coreui/vendors/simplebar/css/simplebar.css') }}">
     <link rel="stylesheet" href="{{ asset('coreui/css/vendors/simplebar.css') }}">
     <!-- Main styles for this application-->
