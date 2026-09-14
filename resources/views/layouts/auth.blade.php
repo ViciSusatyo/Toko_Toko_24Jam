@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <meta name="description" content="CoreUI authentication page">
+    <title>@yield('title', 'Authentication') | CoreUI</title>
+
+    <!-- Vendors styles-->
+    <link rel="stylesheet" href="{{ asset('coreui/vendors/simplebar/css/simplebar.css') }}">
+    <link rel="stylesheet" href="{{ asset('coreui/css/vendors/simplebar.css') }}">
+    <!-- Main styles for this application-->
+    <link href="{{ asset('coreui/css/style.css') }}" rel="stylesheet">
+    <!-- CoreUI Icons -->
+    <link href="{{ asset('coreui/vendors/@coreui/icons/css/free.min.css') }}" rel="stylesheet">
+    <script src="{{ asset('coreui/js/config.js') }}"></script>
+    <script src="{{ asset('coreui/js/color-modes.js') }}"></script>
+    @stack('styles')
+</head>
+
+<body>
+    <div class="position-fixed top-0 end-0 p-3 z-3">
+        <div class="dropdown">
+            <button class="btn btn-light border rounded-circle shadow-sm d-flex align-items-center justify-content-center" type="button" style="width: 2.5rem; height: 2.5rem" aria-expanded="false" data-coreui-toggle="dropdown" aria-label="Switch color theme" title="Switch color theme">
+                <svg class="icon icon-lg theme-icon-active" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+                    <path fill="var(--ci-primary-color, currentcolor)" d="M256 16C123.452 16 16 123.452 16 256s107.452 240 240 240 240-107.452 240-240S388.548 16 256 16m-22 446.849a208.35 208.35 0 0 1-169.667-125.9c-.364-.859-.706-1.724-1.057-2.587L234 429.939Zm0-69.582L50.889 290.76A210 210 0 0 1 48 256q0-9.912.922-19.67L234 339.939Zm0-90L54.819 202.96a206 206 0 0 1 9.514-27.913Q67.1 168.5 70.3 162.191L234 253.934Zm0-86.015L86.914 134.819a209.4 209.4 0 0 1 22.008-25.9q3.72-3.72 7.6-7.228L234 166.027Zm0-87.708-89.648-49.093A206.95 206.95 0 0 1 234 49.151ZM464 256a207.775 207.775 0 0 1-198 207.761V48.239A207.79 207.79 0 0 1 464 256" class="ci-primary" />
+                </svg>
+            </button>
+            <ul class="dropdown-menu dropdown-menu-end" style="--cui-dropdown-min-width: 8rem">
+                <li>
+                    <button class="dropdown-item d-flex align-items-center" type="button" data-coreui-theme-value="light">
+                        <svg class="icon icon-lg me-3" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+                            <path fill="var(--ci-primary-color, currentcolor)" d="M256 104c-83.813 0-152 68.187-152 152s68.187 152 152 152 152-68.187 152-152-68.187-152-152-152m0 272a120 120 0 1 1 120-120 120.136 120.136 0 0 1-120 120M240 16h32v48h-32zm0 432h32v48h-32zm208-208h48v32h-48zm-432 0h48v32H16zm372.687 171.314 22.627-22.627 32 32-22.627 22.627zm-320-320 22.628-22.628 32 32-22.628 22.628zm-.002 329.375 32-32 22.628 22.626-32 32zm320.002-320.003 32-32 22.628 22.628-32 32z" class="ci-primary" />
+                        </svg>
+                        Light
+                    </button>
+                </li>
+                <li>
+                    <button class="dropdown-item d-flex align-items-center" type="button" data-coreui-theme-value="dark">
+                        <svg class="icon icon-lg me-3" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+                            <path fill="var(--ci-primary-color, currentcolor)" d="M268.279 496c-67.574 0-130.978-26.191-178.534-73.745S16 311.293 16 243.718A252.25 252.25 0 0 1 154.183 18.676a24.44 24.44 0 0 1 34.46 28.958 220.12 220.12 0 0 0 54.8 220.923A218.75 218.75 0 0 0 399.085 333.2a220.2 220.2 0 0 0 65.277-9.846 24.439 24.439 0 0 1 28.959 34.461A252.26 252.26 0 0 1 268.279 496M153.31 55.781A219.3 219.3 0 0 0 48 243.718C48 365.181 146.816 464 268.279 464a219.3 219.3 0 0 0 187.938-105.31 253 253 0 0 1-57.13 6.513 250.54 250.54 0 0 1-178.268-74.016 252.15 252.15 0 0 1-67.509-235.4Z" class="ci-primary" />
+                        </svg>
+                        Dark
+                    </button>
+                </li>
+                <li>
+                    <button class="dropdown-item d-flex align-items-center active" type="button" data-coreui-theme-value="auto">
+                        <svg class="icon icon-lg me-3" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+                            <path fill="var(--ci-primary-color, currentcolor)" d="M256 16C123.452 16 16 123.452 16 256s107.452 240 240 240 240-107.452 240-240S388.548 16 256 16m-22 446.849a208.35 208.35 0 0 1-169.667-125.9c-.364-.859-.706-1.724-1.057-2.587L234 429.939Zm0-69.582L50.889 290.76A210 210 0 0 1 48 256q0-9.912.922-19.67L234 339.939Zm0-90L54.819 202.96a206 206 0 0 1 9.514-27.913Q67.1 168.5 70.3 162.191L234 253.934Zm0-86.015L86.914 134.819a209.4 209.4 0 0 1 22.008-25.9q3.72-3.72 7.6-7.228L234 166.027Zm0-87.708-89.648-49.093A206.95 206.95 0 0 1 234 49.151ZM464 256a207.775 207.775 0 0 1-198 207.761V48.239A207.79 207.79 0 0 1 464 256" class="ci-primary" />
+                        </svg>
+                        Auto
+                    </button>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <main class="bg-body-tertiary min-vh-100 d-flex flex-row align-items-center">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-md-8 col-lg-6">
+                    <div class="card p-4">
+                        <div class="card-body d-flex flex-column gap-4">
+                            <a class="d-flex align-items-center gap-2 mb-2 text-decoration-none text-body" href="{{ url('/') }}">
+                                <svg role="img" aria-label="CoreUI Logo" class="flex-shrink-0" width="32" height="36" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 102 115">
+                                    <g style="fill: currentColor">
+                                        <path d="M96 24.124 57 1.608a12 12 0 0 0-12 0L6 24.124a12.034 12.034 0 0 0-6 10.393V79.55a12.033 12.033 0 0 0 6 10.392l39 22.517a12 12 0 0 0 12 0l39-22.517a12.033 12.033 0 0 0 6-10.392V34.517a12.034 12.034 0 0 0-6-10.393ZM94 79.55a4 4 0 0 1-2 3.464l-39 22.517a4 4 0 0 1-4 0L10 83.014a4 4 0 0 1-2-3.464V34.517a4 4 0 0 1 2-3.464L49 8.536a4 4 0 0 1 4 0l39 22.517a4 4 0 0 1 2 3.464V79.55Z" />
+                                        <path d="M74.022 70.071h-2.866a4 4 0 0 0-1.925.494L51.95 80.05 32 68.531V45.554l19.95-11.519 17.29 9.455a4 4 0 0 0 1.919.49h2.863a2 2 0 0 0 2-2v-2.71a2 2 0 0 0-1.04-1.756L55.793 27.02a8.04 8.04 0 0 0-7.843.09L28 38.626a8.025 8.025 0 0 0-4 6.929V68.53a8 8 0 0 0 4 6.928l19.95 11.519a8.043 8.043 0 0 0 7.843.088l19.19-10.532a2 2 0 0 0 1.038-1.753v-2.71a2 2 0 0 0-2-2Z" />
+                                    </g>
+                                </svg>
+                                <span>
+                                    <strong class="d-block">CoreUI</strong>
+                                    <small class="text-body-secondary">@yield('brand-subtitle', 'Sign in to your admin workspace.')</small>
+                                </span>
+                            </a>
+
+                            @yield('content')
+
+                            @yield('footer')
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script src="{{ asset('coreui/vendors/@coreui/coreui/js/coreui.bundle.min.js') }}"></script>
+    <script src="{{ asset('coreui/vendors/simplebar/js/simplebar.min.js') }}"></script>
+    @stack('scripts')
+</body>
+</html>
